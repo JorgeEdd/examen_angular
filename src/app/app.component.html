@@ -1,0 +1,19 @@
+<div #sidebar appSidebar>
+</div>
+
+<div class="c-wrapper">
+  <header class="c-header c-header-light c-header-fixed c-header-shadow">    
+    <button matRipple class="c-header-toggler" type="button" (click)="sidebar.toggle()">
+      <span class="c-header-toggler-icon"></span>
+    </button>
+
+    <div class="c-header-brand">
+      <strong>Admin</strong>-Template
+    </div>
+  </header>
+
+  <div class="c-body">
+    <router-outlet></router-outlet>
+  </div>
+
+</div>

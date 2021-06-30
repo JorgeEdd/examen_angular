@@ -1,0 +1,28 @@
+
+<mat-card class="d-flex justify-content-center">
+    <div class="form d-flex flex-column col-6">
+        
+            <mat-form-field>
+                <input matInput type="text" name="nombre" placeholder="Nombre" required [(ngModel)]="usuario.nombre">
+            </mat-form-field>
+
+            <mat-form-field>
+                <input matInput type="text" name="apellido" placeholder="Apellido" required [(ngModel)]="usuario.apellido">
+            </mat-form-field>
+
+            <mat-form-field appearance="fill">
+                <mat-label>Departamento</mat-label>
+                <mat-select [(ngModel)]="usuario.departamento">
+                <mat-option value="Contabilidad">Contabilidad</mat-option>
+                <mat-option value="Marketing">Marketing</mat-option>
+                <mat-option value="Sistemas">Sistemas</mat-option>
+                </mat-select>
+            </mat-form-field>
+            
+            <mat-form-field>
+                <input matInput type="number" name="edad"  placeholder="Edad" [(ngModel)]="usuario.edad">
+            </mat-form-field>
+
+            <button class="btn btn-primary" [disabled]="usuario.nombre ==  '' || usuario.apellido == '' || usuario.departamento == '' " mat-button (click)="Enviar()" >Enviar</button>
+        </div>
+</mat-card>
