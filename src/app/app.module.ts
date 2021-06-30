@@ -24,6 +24,9 @@ import { EmpleadosComponent } from './page/empleados/empleados.component';
 import { FormularioComponent } from './page/formulario/formulario.component';
 import { MatSelectModule } from '@angular/material/select';
 import { FormsModule } from '@angular/forms';
+import { AngularFireModule } from 'angularfire2';
+import { environment } from 'src/environments/environment';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 
 @NgModule({
   declarations: [
@@ -39,6 +42,7 @@ import { FormsModule } from '@angular/forms';
     BrowserModule,
     BrowserAnimationsModule,
     AppRoutingModule,
+    AngularFireModule.initializeApp(environment.firebaseConfig),
     MatTableModule,
     MatPaginatorModule,
     MatSortModule,
@@ -54,6 +58,7 @@ import { FormsModule } from '@angular/forms';
     MatRippleModule,
     MatSelectModule,
     FormsModule,
+    MatSnackBarModule
   ],
   providers: [{
     provide: LocationStrategy,

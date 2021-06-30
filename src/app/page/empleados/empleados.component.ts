@@ -13,7 +13,7 @@ export class EmpleadosComponent implements AfterViewInit, OnInit {
   @ViewChild(MatPaginator) paginator?: MatPaginator;
   @ViewChild(MatSort) sort?: MatSort;
   @ViewChild(MatTable) table?: MatTable<TableItem>;
-  dataSource?: TableDataSource;
+  dataSource = [] as any;
 
   displayedColumns = ['name', 'apellido', 'departamento', 'edad'];
 

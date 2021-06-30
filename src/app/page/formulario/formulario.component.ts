@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { TableDataSource, TableItem } from '../table/table-datasource';
+import { MatSnackBar  } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'formulario-root',
@@ -9,6 +10,13 @@ import { TableDataSource, TableItem } from '../table/table-datasource';
 })
 
 export class FormularioComponent implements OnInit {
+
+  constructor(private _snackBar: MatSnackBar) {}
+
+  openSnackBar() {
+    this._snackBar.open("Guardado correctamente");
+  }
+
   ngOnInit(): void {
 
 
@@ -39,6 +47,13 @@ export class FormularioComponent implements OnInit {
   Enviar(){ console.log(this.usuario)
     this.listaUsuarios.push(this.usuario)
     localStorage.setItem("usuarios",JSON.stringify(this.listaUsuarios))
+    this.openSnackBar();
+    this.usuario = {
+      nombre: "",
+      apellido: "",
+      departamento: "",
+      edad: ""
+    }
   }
 
 }
